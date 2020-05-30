@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
     socketfd = socket(AF_INET, SOCK_STREAM, 0);
     memset(&sockaddr, 0, sizeof(sockaddr));
     sockaddr.sin_family = AF_INET;
-    sockaddr.sin_port = htons(8100);
+    sockaddr.sin_port = htons(8500);
     inet_pton(AF_INET, servInetAddr, &sockaddr.sin_addr);
 
     if ((connect(socketfd, (struct sockaddr *) &sockaddr, sizeof(sockaddr))) < 0)
@@ -57,12 +57,12 @@ int main(int argc, char **argv) {
     int pLen = 0;
     int rLen = recv(socketfd, &pLen, sizeof(int), MSG_PEEK);
     if (rLen < 0){
-        printf("error");
+        printf("error\n");
     }
     char revs[1024];
     rLen = read(socketfd, revs, pLen);
     if (rLen < 0){
-        printf("err");
+        printf("err\n");
     }
     task_t in_t;
     bzero(&in_t, sizeof(task_t));

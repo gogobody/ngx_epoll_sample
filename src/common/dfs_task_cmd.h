@@ -20,7 +20,22 @@
 
 typedef enum 
 {
-	TASK_TEST = 1,
+    NN_MKDIR = 1,
+    NN_RMR,
+    NN_LS,
+    NN_GET_FILE_INFO,
+    NN_CREATE,
+    NN_GET_ADDITIONAL_BLK,
+    NN_CLOSE,
+    NN_RM,
+    NN_OPEN,
+    DN_REGISTER,
+    DN_HEARTBEAT,
+    DN_RECV_BLK_REPORT,
+    DN_DEL_BLK,
+    DN_DEL_BLK_REPORT,
+    DN_BLK_REPORT,
+    TASK_TEST
 
 } cmd_t;
 
